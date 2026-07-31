@@ -42,7 +42,7 @@ public class Main {
             case 2:
 
             default:
-                System.out.println("Invalid choice");
+                System.out.println("It is Invalid choice");
         }
     }
 }
