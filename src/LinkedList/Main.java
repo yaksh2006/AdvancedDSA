@@ -7,6 +7,7 @@ public class Main {
         System.out.print("Enter the Choice what operation you want to perform: ");
         System.out.println("1 for reverse a Linked list: ");
         System.out.println("2 for add Two list and create a new reversed list: ");
+        System.out.println("3 for remove an element from a Linked List: ");
         int choice = in.nextInt();
 
         switch(choice) {
@@ -26,17 +27,7 @@ public class Main {
                 }
                 reverseLinkedList rls = new reverseLinkedList();
                 temp = rls.reverseLinkList(head);
-                boolean ischeck = true;
-                while(temp != null) {
-                    if(ischeck) {
-                        System.out.print(temp.val);
-                        temp = temp.next;
-                        ischeck = false;
-                    } else {
-                        System.out.print("->" + temp.val);
-                        temp = temp.next;
-                    }
-                }
+                Display.display(temp);
                 break;
 
             case 2:
@@ -69,19 +60,27 @@ public class Main {
                 }
                 addLinkedList als = new addLinkedList();
                 Node tem = als.addLinkList(head1, head2);
-                boolean ischec = true;
-                while(tem != null) {
-                    if(ischec) {
-                        System.out.print(tem.val);
-                        tem = tem.next;
-                        ischec = false;
-                    } else {
-                        System.out.print("->" + tem.val);
-                        tem = tem.next;
-                    }
-                }
+                Display.display(tem);
                 break;
-
+            case 3:
+                System.out.println("Enter the size of an array as linked list");
+                int size = in.nextInt();
+                System.out.println("Enter an Array: ");
+                int[] arr = new int[size];
+                for(int i=0; i<size; i++) {
+                    arr[i] = in.nextInt();
+                }
+                System.out.println("Enter the element to be remove: ");
+                int k = in.nextInt();
+                Node a = new Node(arr[0]);
+                Node t = a;
+                for(int i=1; i<size; i++) {
+                    t.next = new Node(arr[i]);
+                    t = t.next;
+                }
+                Node ans = removeElement.removedElement(a, k);
+                Display.display(ans);
+                break;
             default:
                 System.out.println("It is Invalid choice");
         }
