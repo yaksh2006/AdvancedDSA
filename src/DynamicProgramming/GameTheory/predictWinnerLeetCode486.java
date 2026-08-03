@@ -19,6 +19,7 @@ public class predictWinnerLeetCode486 {
         return dp[left][right] = Math.max(takeLeft, takeRight);
     }
     public static boolean predictWin(int[] num, int[][] dp) {
+
         return PW(num, 0, num.length-1, dp) >= 0;
     }
     public static void main(String[] args) {
@@ -30,5 +31,6 @@ public class predictWinnerLeetCode486 {
         int[][] dp = new int[num.length][num.length];
         ArrayInput.dpTwoDimFill(dp);
         System.out.println(predictWin(num, dp));
+        in.close();
     }
 }
