@@ -1,0 +1,19 @@
+# This algorithm is generally used to find or detect negative cycle in a graph
+weather negative cycle exists or not.
+
+# This algorithm is advancement of Dijkstra's algorithm and Single source sortest path algorithm.
+
+ALGO :
+
+START:
+1. Create a Distance array distance[vertex];
+2. Initialize all vertex with Integer.MAX_VALUE and distance[source] with 0;
+3. Make loop vertex - 1 times.
+4. Check distance[edge.source] + [edge.weight] < distance[edge.destination];
+---> if true update distance[edge.destination] = distance[edge.source] + [edge.weight];
+---> if there is no update then break from loop;
+5. check cycle
+---> if distance[edge.source] != max value AND distance[edge.source] + [edge.weight] < distance[edge.destination];
+---> Negative cycle detected;
+6. If there is no cycle than print distance array.
+END;
